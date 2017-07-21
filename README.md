@@ -73,4 +73,3 @@ We've provided you with a console that you can use to test your code. To enter a
   + returns all of the viewers who added this movie to their watchlist
 + Movie#average_rating
   + returns the average of all ratings across viewers
-# mod-1-final-code-challenge
