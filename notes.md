@@ -17,9 +17,11 @@
 Viewer:
  - has many ratings
  - has many movies through ratings
+ 
 Movies:
  - has many ratings
  - has many viewers through ratings
+ 
 Ratings:
  - belongs to viewers
  - belongs to movies
@@ -31,14 +33,17 @@ Viewer:
   - has many watchlists
   - has many movies through watchlists
   - has many genres through movies
+  
 Movies:
   - has many watchlists
   - has many viewers through watchlists
   - belongs to genre
+  
 Watchlist:
   - belongs to viewers
   - belongs to movies
   - has many genres through movies
+  
 Genres:
   - has many movies
   - has many watchlists through movies
