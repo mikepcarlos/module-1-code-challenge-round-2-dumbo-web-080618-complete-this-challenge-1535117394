@@ -23,7 +23,6 @@ We've provided you with a console that you can use to test your code. To enter a
 ## Deliverables
 
 ### VIEWER
-*Attributes:* name
 
 *Methods:*
 + Viewer.all
@@ -36,7 +35,6 @@ We've provided you with a console that you can use to test your code. To enter a
   + given one or more movies, add them to the viewer's watchlist
 
 ### GENRE
-*Attributes:* name
 
 *Methods:*
 + Genre.all
@@ -47,7 +45,6 @@ We've provided you with a console that you can use to test your code. To enter a
   + returns the genre with the most amount of watched movies (movies that belong to a watchlist across viewers)
 
 ### WATCHLIST
-*Attributes:* movie, viewer, rating
 
 *Methods:*
 + Watchlist.all
@@ -60,7 +57,6 @@ We've provided you with a console that you can use to test your code. To enter a
   + returns the viewer's rating for the movie
 
 ### MOVIE
-*Attributes:* title, genre
 
 *Methods:*
 + Movie.all
