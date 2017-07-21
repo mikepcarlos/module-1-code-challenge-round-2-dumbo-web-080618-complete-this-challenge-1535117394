@@ -35,7 +35,7 @@ We've provided you with a console that you can use to test your code. To enter a
 + Viewer#add_to_watchlist
   + given one or more movies, add them to the viewer's watchlist
 
-###GENRE
+### GENRE
 *Attributes:* name
 
 *Methods:*
@@ -46,7 +46,7 @@ We've provided you with a console that you can use to test your code. To enter a
 + Genre#most_watched
   + returns the genre with the most amount of watched movies (movies that belong to a watchlist across viewers)
 
-###WATCHLIST
+### WATCHLIST
 *Attributes:* movie, viewer, rating
 
 *Methods:*
@@ -59,7 +59,7 @@ We've provided you with a console that you can use to test your code. To enter a
 + Watchlist#rating
   + returns the viewer's rating for the movie
 
-###MOVIE
+### MOVIE
 *Attributes:* title, genre
 
 *Methods:*
