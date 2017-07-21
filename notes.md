@@ -10,7 +10,7 @@
 ## Ways to make it harder:
 1. Add a has-many to has-many relationship and methods related to it
 2. Take out the basic set-up from the models so they're not clued into what the attr_accessors might be vs the methods they should be building
-3. Add more difficult Ruby functionality RATHER than focusing on the relationship bit. (So maybe don't change the domain model?)
+3. Add more difficult Ruby functionality RATHER than focusing on the relationship bit. 
 
 ## Current domain model:
 
@@ -28,18 +28,20 @@ Ratings:
 ## Proposed domain model:
 
 Viewer:
-  - has many ratings
-  - has many movies through ratings
+  - has many watchlists
+  - has many movies through watchlists
   - has many genres through movies
 Movies:
-  - has many ratings
-  - has many viewers through ratings
+  - has many watchlists
+  - has many viewers through watchlists
   - belongs to genre
-Ratings:
+Watchlist:
   - belongs to viewers
   - belongs to movies
   - has many genres through movies
 Genres:
   - has many movies
-  - has many ratings through movies
-  - has many viewers through ratings
+  - has many watchlists through movies
+  - has many viewers through watchlists
+  
+*Note*: Watchlist contains ratings for movies but a movie can be added without a rating.
