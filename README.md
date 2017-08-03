@@ -1,6 +1,6 @@
 # Object Relations Assessment
 
-For this assignment, we'll be building out Netflix! A viewer has many movies on their watchlist and can give them ratings. Movies can appear on many watchlists. Each movie only has one genre for this exercise
+For this assignment, we'll be building out Netflix! A viewer has many movies on their watchlist and can give them ratings. Movies can appear on many watchlists.
 
 As always, make sure to sketch out your domain and think about the single source of truth for your data.
 
@@ -27,22 +27,12 @@ We've provided you with a console that you can use to test your code. To enter a
 *Methods:*
 + Viewer.all
   + returns all of the viewers
-+ Viewer#watchlist
++ Viewer#movies
   + returns the movies on viewer's watchlist
-+ Viewer#create_or_edit_rating
-  + given a movie, create a rating or edit its current rating on the viewer's watchlist
-+ Viewer#add_to_watchlist
-  + given one or more movies, add them to the viewer's watchlist
-
-### GENRE
-
-*Methods:*
-+ Genre.all
-  + returns all genres
-+ Genre#movies
-  + returns all movies in genre
-+ Genre#most_watched
-  + returns the genre with the most amount of watched movies (movies that belong to a watchlist across viewers)
++ Viewer#add_to_watchlist(movies)
+  + this method should receive an array of one or more movie instances and add them to the viewer's watchlist
++ Viewer#rate_movie(movie, rating)
+  + given a movie on a viewer's watchlist and a rating (a number between 1 and 5), assign that viewer's rating to the movie.
 
 ### WATCHLIST
 
@@ -61,11 +51,11 @@ We've provided you with a console that you can use to test your code. To enter a
 *Methods:*
 + Movie.all
   + returns an array of all movies
-+ Movie.highest_rated
-  + should return the movie with the highest average rating across viewers
-+ Movie.mass_assign_genre
-  + given an array of movie titles and a genre name, should assign the genre to each movie
++ Movie#watchlists
+  + returns an array of all the watchlist objects that contain that movie
 + Movie#viewers
   + returns all of the viewers who added this movie to their watchlist
 + Movie#average_rating
-  + returns the average of all ratings across viewers
+  + returns the average of all ratings across all viewers watchlist ratings
++ Movie.highest_rated
+  + should return the movie with the highest average rating across all the viewers watchlists
