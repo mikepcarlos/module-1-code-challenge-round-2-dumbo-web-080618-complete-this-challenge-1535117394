@@ -1,0 +1,4 @@
+class Watchlist
+  
+
+end

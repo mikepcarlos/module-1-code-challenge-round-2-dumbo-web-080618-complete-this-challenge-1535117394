@@ -1,11 +1,15 @@
 class Viewer
-  attr_accessor :first_name, :last_name
+  attr_accessor :username
 
-  def initialize(name)
-    @name = name
+  @@all = []
+
+  def initialize(username)
+    @username = username
+    self.class.all << self
   end
 
-  def full_name
-    "#{first_name} #{last_name}"
+  def self.all
+    @@all
   end
+  
 end
