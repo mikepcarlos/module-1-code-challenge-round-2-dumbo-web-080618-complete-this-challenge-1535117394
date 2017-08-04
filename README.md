@@ -32,11 +32,11 @@ Implement all of the methods described below
 + Watchlist.all
   + returns all of the ratings
 + Watchlist#viewer
-  + returns the viewer for that given rating
+  + returns the viewer associated with this watchlist
 + Watchlist#movie
-  + returns the movie for that given rating
+  + returns the movie associated with this watchlist
 + Watchlist#rating
-  + returns the viewer's rating for the movie
+  + returns the viewer's rating for the movie associated with this watchlist
 
 ### MOVIE
 
