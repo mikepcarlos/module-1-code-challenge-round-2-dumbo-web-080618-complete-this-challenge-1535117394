@@ -2,7 +2,7 @@
 
 ## Your Task
 
-For this challenge, we'll be building out Netflix! A Viewer has many movies on their Watchlist. A Movie can appear on many Viewer's Watchlists.  A Viewer can assign a rating to a movie on their Watchlist.
+For this challenge, we'll be building out Netflix! A Viewer has many Movies via their Watchlist. A Movie can appear on many Viewer's Watchlists.  A Viewer can assign a rating to a movie on their Watchlist.
 
 As always, make sure to sketch out your domain and think about the single source of truth for your data.
 
@@ -29,8 +29,10 @@ Implement all of the methods described below
 
 ### WATCHLIST
 
+_A Watchlist object represents that an individual user has added a particular movie to their watchlist and rated it._
+
 + Watchlist.all
-  + returns all of the ratings
+  + returns all of watchlists
 + Watchlist#viewer
   + returns the viewer associated with this watchlist
 + Watchlist#movie
