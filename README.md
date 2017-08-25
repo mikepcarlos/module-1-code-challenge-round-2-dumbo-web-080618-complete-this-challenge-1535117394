@@ -27,18 +27,18 @@ Implement all of the methods described below
 + Viewer#rate_movie(movie, rating)
   + given a movie on a viewer's watchlisting and a rating (a number between 1 and 5), assign the rating to the movie. Where should the rating that an individual viewer gives to an individual movie be stored?
 
-### WATCHLIST
+### WATCHLISTING
 
-_A Watchlist object represents that an individual user has added a particular movie to their watchlist and rated it._
+_A Watchlisting object represents that an individual user has added a particular movie to their watchlist and rated it._
 
 + Watchlisting.all
   + returns all of watchlistings
 + Watchlisting#viewer
-  + returns the viewer associated with this watchlist
+  + returns the viewer associated with this watchlisting
 + Watchlisting#movie
-  + returns the movie associated with this watchlist
+  + returns the movie associated with this watchlisting
 + Watchlisting#rating
-  + returns the viewer's rating for the movie associated with this watchlist
+  + returns the viewer's rating for the movie associated with this watchlisting
 
 ### MOVIE
 
