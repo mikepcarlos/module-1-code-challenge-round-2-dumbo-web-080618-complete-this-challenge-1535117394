@@ -29,7 +29,7 @@ Implement all of the methods described below
 
 ### WATCHLISTING
 
-_A Watchlisting object represents that an individual user has added a particular movie to their watchlist and rated it. **It is not the full LIST, but a LISTING.**_
+_A Watchlisting object represents that an individual user has added a particular movie to their watchlist and rated it. **It is not the full LIST, but a single LISTING.**_
 
 + Watchlisting.all
   + returns all of watchlistings
