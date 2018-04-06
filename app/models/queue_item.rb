@@ -1,0 +1,4 @@
+class QueueItem
+
+
+end
