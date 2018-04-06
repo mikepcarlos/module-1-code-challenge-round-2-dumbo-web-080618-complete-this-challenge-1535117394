@@ -22,14 +22,16 @@ Implement all of the methods described below
 
 + Viewer.all
   + returns all of the viewers
-+ Viewer#queue
++ Viewer#queue_items
+  + this method should return an array of QueueItem instances associated with this Viewer.
++ Viewer#queue_movies
   + this method should return an array of Movie instances in the Viewer's queue.
-+ Viewer#add_movie_to_queue
-  + this method should receive a Movie instance and add it to the Viewer's queue
-+ Viewer#add_movies_to_queue
++ Viewer#add_movie_to_queue(movie)
+  + this method should receive a Movie instance as its only argument and add it to the Viewer's queue
++ Viewer#add_movies_to_queue(movies)
   + this method should receive an array of Movie instances and add each one to the Viewer's queue
 + Viewer#rate_movie(movie, rating)
-  + given a movie and a rating (a number between 1 and 5), assign the rating to the viewer's QueueItem for that movie. If the movie is not already in the viewer's queue, add a new QueueItem with the viewer, movie, and rating.
+  + given a movie and a rating (a number between 1 and 5), this method should assign the rating to the viewer's QueueItem for that movie. If the movie is not already in the viewer's queue, this method should add a new QueueItem with the viewer, movie, and rating. If the movie is already in the queue, this method should not create a new QueueItem.
 
 ### `QueueItem`
 
@@ -42,18 +44,16 @@ _A QueueItem object represents that an individual user has added a particular mo
 + QueueItem#movie
   + returns the movie associated with this QueueItem
 + QueueItem#rating
-  + returns the viewer's rating for the movie associated with this QueueItem. If the viewer has not yet rated this movie, calling QueueItem#rating should return `nil`
+  + returns the rating for this QueueItem. If the viewer has not yet rated the movie, QueueItem#rating should be `nil`
 
 ### `Movie`
 
 + Movie.all
   + returns an array of all Movies
 + Movie#queue_items
-  + returns an array of all the queue_item objects that contain that movie
+  + returns an array of all the queue_item objects that contain this movie
 + Movie#viewers
-  + returns an array of all of the viewers with this movie on their queue
-+ Movie#ratings
-  + returns an array of all the ratings for this movie
+  + returns an array of all of the viewers with this movie in their queue
 + Movie#average_rating
   + returns the average of all ratings for this movie
 + Movie.highest_rated
