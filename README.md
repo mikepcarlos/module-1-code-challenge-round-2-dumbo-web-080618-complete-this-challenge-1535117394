@@ -18,20 +18,20 @@ We've provided you with a console that you can use to test your code. To enter a
 
 Implement all of the methods described below
 
-### VIEWER
+### `Viewer`
 
 + Viewer.all
   + returns all of the viewers
 + Viewer#queue
   + this method should return an array of Movie instances in the Viewer's queue.
-+ Viewer#add_movie
++ Viewer#add_movie_to_queue
   + this method should receive a Movie instance and add it to the Viewer's queue
-+ Viewer#add_movies
++ Viewer#add_movies_to_queue
   + this method should receive an array of Movie instances and add each one to the Viewer's queue
 + Viewer#rate_movie(movie, rating)
   + given a movie and a rating (a number between 1 and 5), assign the rating to the viewer's QueueItem for that movie. If the movie is not already in the viewer's queue, add a new QueueItem with the viewer, movie, and rating.
 
-### QueueItem
+### `QueueItem`
 
 _A QueueItem object represents that an individual user has added a particular movie to their queue, and possibly rated it. **It is not the full Queue, but a single QueueItem.**_
 
@@ -44,7 +44,7 @@ _A QueueItem object represents that an individual user has added a particular mo
 + QueueItem#rating
   + returns the viewer's rating for the movie associated with this QueueItem. If the viewer has not yet rated this movie, calling QueueItem#rating should return `nil`
 
-### MOVIE
+### `Movie`
 
 + Movie.all
   + returns an array of all Movies
