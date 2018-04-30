@@ -1,10 +1,16 @@
 # Object Relations Assessment
 
-## Your Task
-
 For this challenge, we'll be building out Netflix! A `Viewer` has many `Movie`s through `QueueItem`s. A `Movie` can appear on many `Viewer`s' queues. A `Viewer` can rate a `Movie`, marking their rating on the `QueueItem`.
 
 As always, make sure to sketch out your domain and think about the single source of truth for your data.
+
+## Topics
+
+- Classes vs Instances
+- Variable Scope ( Class, Instance, Local )
+- Object Relationships
+- Arrays and Array Methods
+- Class Methods
 
 ## Notes
 
