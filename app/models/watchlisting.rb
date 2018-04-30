@@ -1,4 +1,0 @@
-class WatchListing
-
-
-end

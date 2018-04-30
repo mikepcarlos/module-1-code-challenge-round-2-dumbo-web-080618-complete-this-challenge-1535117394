@@ -1,14 +1,20 @@
 # Object Relations Assessment
 
-## Your Task
-
-For this challenge, we'll be building out Netflix! A Viewer has many Movies via their WatchListing. A Movie can appear on many Viewer's WatchListings.  A Viewer can assign a rating to a movie on their Watchlisting.
+For this challenge, we'll be building out Netflix! A `Viewer` has many `Movie`s through `QueueItem`s. A `Movie` can appear on many `Viewer`s' queues. A `Viewer` can rate a `Movie`, marking their rating on the `QueueItem`.
 
 As always, make sure to sketch out your domain and think about the single source of truth for your data.
 
+## Topics
+
+- Classes vs Instances
+- Variable Scope ( Class, Instance, Local )
+- Object Relationships
+- Arrays and Array Methods
+- Class Methods
+
 ## Notes
 
-Your goal is to build out all of the methods listed in the deliverables. Do your best to follow Ruby best practices. For example, use higher-level array methods such as `map`, `select`, and `find` when appropriate in place of `each`
+Your goal is to build out all of the methods listed in the deliverables. Do your best to follow Ruby best practices. For example, use higher-level array methods such as `map`, `select`, and `find` when appropriate in place of `each`.
 
 We've provided you with a console that you can use to test your code. To enter a console session, run `ruby tools/console.rb`. You'll be able to test out the methods that you write here.
 
@@ -18,37 +24,41 @@ We've provided you with a console that you can use to test your code. To enter a
 
 Implement all of the methods described below
 
-### VIEWER
+### `Viewer`
 
-+ Viewer.all
++ `Viewer.all`
   + returns all of the viewers
-+ Viewer#add_to_watchlist(movies)
-  + this method should receive an array of one or more movie instances and add them to the viewer's watchlisting
-+ Viewer#rate_movie(movie, rating)
-  + given a movie on a viewer's watchlisting and a rating (a number between 1 and 5), assign the rating to the movie. Where should the rating that an individual viewer gives to an individual movie be stored?
++ `Viewer#queue_items`
+  + this method should return an array of `QueueItem` instances associated with this instance of `Viewer`.
++ `Viewer#queue_movies`
+  + this method should return an array of `Movie` instances in the `Viewer`'s queue.
++ `Viewer#add_movie_to_queue(movie)`
+  + this method should receive a `Movie` instance as its only argument and add it to the `Viewer`'s queue
++ `Viewer#rate_movie(movie, rating)`
+  + given a movie and a rating (a number between 1 and 5), this method should assign the rating to the viewer's `QueueItem` for that movie. If the movie is not already in the viewer's queue, this method should add a new `QueueItem` with the viewer, movie, and rating. If the movie is already in the queue, this method should not create a new `QueueItem`.
 
-### WATCHLISTING
+### `QueueItem`
 
-_A Watchlisting object represents that an individual user has added a particular movie to their watchlist and rated it. **It is not the full LIST, but a single LISTING.**_
+_A `QueueItem` object represents that an individual user has added a particular movie to their queue, and possibly rated it. **It is not the full queue, but a single item in the queue.**_
 
-+ Watchlisting.all
-  + returns all of watchlistings
-+ Watchlisting#viewer
-  + returns the viewer associated with this watchlisting
-+ Watchlisting#movie
-  + returns the movie associated with this watchlisting
-+ Watchlisting#rating
-  + returns the viewer's rating for the movie associated with this watchlisting
++ `QueueItem.all`
+  + returns an array of all `QueueItem`s
++ `QueueItem#viewer`
+  + returns the viewer associated with this `QueueItem`
++ `QueueItem#movie`
+  + returns the movie associated with this `QueueItem`
++ `QueueItem#rating`
+  + returns the rating for this `QueueItem`. If the viewer has not yet rated the movie, `QueueItem#rating` should be `nil`
 
-### MOVIE 
+### `Movie`
 
-+ Movie.all
-  + returns an array of all movies
-+ Movie#watchlistings
-  + returns an array of all the watchlist objects that contain that movie
-+ Movie#viewers
-  + returns all of the viewers who added this movie to their watchlist
-+ Movie#average_rating
-  + returns the average of all ratings across all viewers watchlist ratings
-+ Movie.highest_rated
-  + should return the movie with the highest average rating across all the viewers watchlistings
++ `Movie.all`
+  + returns an array of all `Movie`
++ `Movie#queue_items`
+  + returns an array of all the `QueueItem` instances that contain this movie
++ `Movie#viewers`
+  + returns an array of all of the `Viewer`s with this `Movie` instance in their queue
++ `Movie#average_rating`
+  + returns the average of all ratings for this instance of `Movie`
++ `Movie.highest_rated`
+  + returns the instance of `Movie` with the highest average rating
